@@ -1,77 +1,49 @@
-<script setup lang="ts">
-	defineEmits(['toggleSidebar']);
+<script setup>
+	const menuItems = [
+        { label: 'Home', url: '/' },
+        { label: 'About Us', url: '/about' },
+        { label: 'Principal & Staff', url: '/staff' },
+        { label: 'Sports', url: '/sports' },
+		{ label: 'Photo Gallery', url: '/gallery' },
+		{ label: 'Contact', url: '/contact' },
+      ]
 
-	const { availableLocales } = useI18n();
+	  const mobileMenuOpen = ref(false);
 
-	const preferedDark = usePreferredDark();
-	const isDark = useStorage('isDark', preferedDark.value);
-	const body = ref<HTMLBodyElement | null>(null);
+const toggleMobileMenu = () => {
+  mobileMenuOpen.value = !mobileMenuOpen.value;
+}
 
-	const toggleDarkMode = () => {
-		if (body.value) {
-			if (isDark.value) {
-				body.value.classList.remove('dark');
-			} else {
-				body.value.classList.add('dark');
-			}
-		}
-		isDark.value = !isDark.value;
-	};
-
-	onMounted(async () => {
-		await nextTick();
-
-		body.value = document.querySelector('body') as HTMLBodyElement;
-		if (body.value) {
-			if (isDark.value) body.value.classList.add('dark');
-		}
-	});
 </script>
 
 <template>
 	<header>
-		<nav
-			class="
-				w-full
-				bg-white
-				text-gray-800
-				dark:bg-gray-800 dark:text-white
-				py-4
-				px-8
-				shadow-md
-				dark:shadow-md
-				flex
-				items-center
-				border-b border-gray-400/50
-			"
-		>
-			<router-link :to="{ name: 'home' }">
-				<div class="font-bold lg:text-xl md:text-lg text-md">Vitailse</div>
-			</router-link>
-			<div class="ml-auto flex items-center h-full">
-				<select
-					id="language"
-					v-model="$i18n.locale"
-					class="py-1 focus:outline-none rounded dark:text-gray-800"
-				>
-					<option
-						v-for="locale in availableLocales"
-						:key="locale"
-						:value="locale"
-					>
-						{{ locale }}
-					</option>
-				</select>
-				<button
-					class="mx-5 cursor-pointer focus:outline-none"
-					@click="toggleDarkMode"
-				>
-					<icon:bx:bx-moon class="w-6 h-6" v-if="!isDark" />
-					<icon:bx:bxs-moon class="w-6 h-6" v-else />
+		<nav class="bg-gray-800">
+			<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="flex items-center justify-between h-16">
+				<div class="flex md:hidden">
+				<button @click="toggleMobileMenu" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-expanded="false">
+					<span class="sr-only">Open main menu</span>
+					<svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"/>
+					</svg>
 				</button>
-				<a href="https://github.com/zynth17/vitailse">
-					<icon-akar-icons:github-fill />
-				</a>
+				</div>
+
+				<!-- Menu items -->
+				<div class="hidden md:block">
+				<div class="ml-10 flex items-baseline space-x-4">
+					<MenuItem v-for="(item, index) in menuItems" :key="index" :item="item" />
+				</div>
+				</div>
+			</div>
+			</div>
+
+			<!-- Mobile menu (visible on small screens) -->
+			<div :class="mobileMenuOpen ? 'block' : 'hidden'" class="md:hidden">
+			<div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+				<MenuItem v-for="(item, index) in menuItems" :key="index" :item="item" />
+			</div>
 			</div>
 		</nav>
 	</header>

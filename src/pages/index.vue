@@ -1,13 +1,15 @@
 <script setup>
-	useHead({
-		title: 'GSS Girls PG College, Chirawa',
-	});
+import AppHeader from '@/components/AppHeader.vue';
+import slide1 from '@/assets/slide1.jpeg'
+
 </script>
 
 <template>
-	<div class="grid place-items-center min-h-[80vh]">
+	<AppHeader />
+	<div class="grid place-items-start min-h-[80vh]">
 		<div>
-			<h2 class="py-5 text-3xl my-3">Laxmi Co-Education PG College</h2>
+			<p><img :src="slide1" /></p>
+			<h2 class="py-5 text-3xl m-3">लक्ष्मी सह शिक्षा महाविद्यालय </h2>
 		</div>
 	</div>
 </template>
