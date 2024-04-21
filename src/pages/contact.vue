@@ -20,7 +20,7 @@ const center = { lat: 28.199406, lng: 75.705798 }
         <img :src="geotag" class="w-full p-2 border border-gray-800 border-2" />
     </div>
     <div class="w-full md:w-2/3 p-16">
-        <h2 class="py-5 text-2xl mx-5 text-left">लक्ष्मी सह शिक्षा महाविद्यालय </h2>
+        <h2 class="py-5 text-2xl mx-5 text-left">लक्ष्मी सह शिक्षा पीजी महाविद्यालय </h2>
         <p class="pl-5 text-lg">इस्माइलपुर (पिचानवां खुर्द), लालचौक</p>
         <p class="pl-5 text-lg">सिंघाना चिड़ावा स्टेट हाइवै-13 </p>
         <p class="pl-5 text-lg">फोन नं : 9001992249 </p>
