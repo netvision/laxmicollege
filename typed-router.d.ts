@@ -35,6 +35,7 @@ declare module '@vue-router/routes' {
     '/contact': RouteRecordInfo<'/contact', '/contact', Record<never, never>, Record<never, never>>,
     '/documents': RouteRecordInfo<'/documents', '/documents', Record<never, never>, Record<never, never>>,
     '/gallery': RouteRecordInfo<'/gallery', '/gallery', Record<never, never>, Record<never, never>>,
+    '/labs': RouteRecordInfo<'/labs', '/labs', Record<never, never>, Record<never, never>>,
     '/management': RouteRecordInfo<'/management', '/management', Record<never, never>, Record<never, never>>,
     'other-page': RouteRecordInfo<'other-page', '/other-page', Record<never, never>, Record<never, never>>,
     '/sports': RouteRecordInfo<'/sports', '/sports', Record<never, never>, Record<never, never>>,
