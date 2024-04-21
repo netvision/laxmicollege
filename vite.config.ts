@@ -63,9 +63,9 @@ export default defineConfig({
 				'apple-touch-icon.png',
 			],
 			manifest: {
-				name: 'Vitailse',
-				short_name: 'Vitailse',
-				description: 'Opinionated vite template with TailwindCSS',
+				name: 'LaxmiCollege',
+				short_name: 'LaxmiCollege',
+				description: 'LaxmiCollege',
 				theme_color: '#076AE0',
 				icons: [
 					{
