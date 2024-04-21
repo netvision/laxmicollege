@@ -1,13 +1,12 @@
 <script setup>
 import AppHeader from '@/components/AppHeader.vue';
-import slide1 from '@/assets/slide1.jpeg'
 import secretary from '@/assets/secretary-laxmicollege.jpg'
 
 </script>
 
 <template>
 	<AppHeader />
-	<p><img :src="slide1" class="object-cover w-full" /></p>
+	<slider />
 	<div class="container px-5 mx-auto flex flex-wrap">
 		<div
 			class="h-full w-1/3 rounded-lg bg-white shadow-secondary-1 dark:bg-surface-dark p-6">

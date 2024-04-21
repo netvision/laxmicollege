@@ -2,6 +2,8 @@
 	const menuItems = [
         { label: 'Home', url: '/' },
         { label: 'About Us', url: '/about' },
+		{ label: 'Managing Committee', url: '/management' },
+		{ label: 'Mandatory Documents', url: '/documents' },
         { label: 'Principal & Staff', url: '/staff' },
         { label: 'Sports', url: '/sports' },
 		{ label: 'Photo Gallery', url: '/gallery' },
