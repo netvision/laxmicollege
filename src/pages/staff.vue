@@ -15,7 +15,7 @@ import principal from '@/assets/principal.jpg'
             <p>अनुभव: 12+ वर्ष</p>
             <p>Aadhar No.: <strong>6486 0240 8618</strong></p>
             <p>PAN No:<strong> CBMPM3060P</strong></p>
-            <p>Phone No:<strong> 8090489922</strong></p>
+            <p>Phone No:<strong> 8890489922</strong></p>
         </div>
         <div class="m-4">
             <h3 class="text-xl font-bold border-b-2 border-blue-300">स्टाफ</h3>
